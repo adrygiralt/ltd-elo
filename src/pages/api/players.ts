@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import executeQuery from '../../../lib/db'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const loadAll = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'GET') {
   res.status(405).json({ message: 'Method not allowed' });
     return;
@@ -15,3 +15,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   })
   res.json(result)
 }
+
+export default loadAll
